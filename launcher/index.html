@@ -1,84 +1,97 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kalarium Launcher İndir</title>
-  <style>
-    body {
-      font-family: Inter, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9fafb;
-      color: #111;
-      text-align: center;
-    }
-    header {
-      background: #f3f3f3;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header img {
-      height: 50px;
-    }
-    main {
-      padding: 60px 20px;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
-    .download-btn {
-      display: inline-block;
-      padding: 16px 28px;
-      background: #10b981;
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .download-btn:hover {
-      background: #059669;
-      transform: scale(1.05);
-    }
-    .screenshots {
-      margin-top: 50px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .screenshots img {
-      width: 280px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalarium Launcher İndir</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Inter, sans-serif;}
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/kalarium_loading_screen.png') no-repeat center/cover;
+    color: #fff;
+  }
+  .card {
+    background: rgba(30,30,30,0.95);
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    max-width: 500px;
+    width: 100%;
+  }
+  .card h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg,#6ee7b7,#3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .card p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+  }
+  .download-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #3b82f6, #9333ea);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  }
+  .instructions {
+    margin-top: 2rem;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #ddd;
+    line-height: 1.5;
+  }
+  .instructions h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #6ee7b7;
+  }
+  .instructions ol {
+    padding-left: 20px;
+  }
+  .footer {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <a href="/"><img src="/kalarium_logo_flat.png" alt="Kalarium Logo"></a>
-  </header>
-
-  <main>
+  <div class="card">
     <h1>Kalarium Launcher</h1>
-    <p>Windows için Kalarium Launcher'ı indirin ve oyuna kolayca bağlanın.</p>
+    <p>Windows için Kalarium Launcher'ı buradan indirip kurabilirsiniz.</p>
 
-    <!-- İndirme Butonu -->
-    <a href="/launcher/KalariumLauncher.zip" download class="download-btn">📥 Launcher İndir (.zip)</a>
+    <a class="download-btn" href="/launcher/Kalarium Launcher.zip" download>💾 İndir (.zip)</a>
 
-    <!-- Ekran Görüntüleri -->
-    <div class="screenshots">
-      <img src="/launcher/screenshot1.png" alt="Launcher SS 1">
-      <img src="/launcher/screenshot2.png" alt="Launcher SS 2">
+    <div class="instructions">
+      <h2>Kurulum Adımları:</h2>
+      <ol>
+        <li>İndirilen <strong>Kalarium Launcher.zip</strong> dosyasını masaüstüne çıkarın.</li>
+        <li>Masaüstünde oluşan <strong>Kalarium Launcher</strong> klasörüne girin.</li>
+        <li><strong>Kalarium Launcher.exe</strong> kısayolunu Ctrl + C ile kopyalayın.</li>
+        <li>Masaüstüne geri dönüp Ctrl + V ile kısayolu yapıştırın.</li>
+        <li>Artık launcher kısayolu hazır, oyunu başlatmak için çift tıklayın.</li>
+      </ol>
     </div>
-  </main>
+
+    <div class="footer">Sürüm: 1.0 • Sadece Windows</div>
+  </div>
 </body>
 </html>
