@@ -1,194 +1,189 @@
-<html lang="tr"><head>
- <head><meta name="google-site-verification" content="XmmZx_io46TWXv0FpGpwLamPj-etyspJYKVQsaGkZV4" /></head>
-<head><link rel="icon" type="image/png" href="/kalarium_logo_flat.png" /><head>
- <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kalarium Ana Sayfa</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
-  body{
-    overflow-x:hidden;
-    background:#111;
-    color:#fff;
-  }
+<html lang="tr">
+<head>
+  <!-- ✅ Google Site Verification etiketi (doğru yer) -->
+  <meta name="google-site-verification" content="XmmZx_io46TWXv0FpGpwLamPj-etyspJYKVQsaGkZV4" />
 
-  /* Header */
-  header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:15px 30px;
-    background:rgba(0,0,0,0.7);
-    position:sticky;
-    top:0;
-    z-index:100;
-  }
-  header img{
-    height:50px;
-  }
-  nav a{
-    margin-left:20px;
-    text-decoration:none;
-    color:#fff;
-    font-weight:bold;
-    transition:color 0.2s;
-  }
-  nav a:hover{
-    color:#facc15;
-  }
+  <link rel="icon" type="image/png" href="/kalarium_logo_flat.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalarium Ana Sayfa</title>
 
-  /* Hero Section */
-  .hero {
-    background-image: url('kalarium_loading_screen.png'); /* 16:9 resmi buraya */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position:relative;
-  }
-  .hero::after{
-    content:'';
-    position:absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.5); /* overlay */
-  }
-  .hero-content{
-    position:relative;
-    z-index:10;
-    color:#fff;
-    padding:0 20px;
-  }
-  .hero h1{
-    font-size:4rem;
-    font-weight:bold;
-    margin-bottom:20px;
-  }
-  .hero p{
-    font-size:1.5rem;
-    margin-bottom:30px;
-  }
-  .hero a{
-    display:inline-block;
-    margin:0 10px;
-    padding:15px 30px;
-    background:#facc15;
-    color:#000;
-    font-weight:bold;
-    border-radius:9999px;
-    transition:all 0.2s ease;
-  }
-  .hero a:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px rgba(250,204,21,0.4);
-  }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
-  /* SMP IP Button */
-  #smpIpBtn{
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    background:#facc15;
-    color:#000;
-    padding:16px 24px;
-    border-radius:9999px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:all 0.2s ease;
-    z-index:10;
-  }
-  #smpIpBtn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 15px rgba(250, 204, 21,0.4);
-  }
-  #smpIpBtn svg{
-    width:20px;
-    height:20px;
-    fill:currentColor;
-  }
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:Inter,sans-serif;}
+    body {
+      overflow-x:hidden;
+      background:#111;
+      color:#fff;
+    }
 
-  /* Features Section */
-  .features{
-    padding:100px 20px;
-    background:#111;
-    text-align:center;
-  }
-  .features h2{
-    font-size:3rem;
-    font-weight:bold;
-    margin-bottom:50px;
-  }
-  .features-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-  }
-  .feature-card{
-    background:#222;
-    padding:30px;
-    border-radius:20px;
-    transition:transform 0.3s;
-  }
-  .feature-card:hover{
-    transform:translateY(-10px);
-  }
-  .feature-card h3{
-    font-size:1.5rem;
-    margin-bottom:10px;
-  }
-</style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}</style></head>
-<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0" class="clickup-chrome-ext_installed">
+    header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:15px 30px;
+      background:rgba(0,0,0,0.7);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    header img { height:50px; }
+    nav a {
+      margin-left:20px;
+      text-decoration:none;
+      color:#fff;
+      font-weight:bold;
+      transition:color 0.2s;
+    }
+    nav a:hover { color:#facc15; }
+
+    .hero {
+      background-image:url('kalarium_loading_screen.png');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      position:relative;
+    }
+    .hero::after {
+      content:'';
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background:rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position:relative;
+      z-index:10;
+      color:#fff;
+      padding:0 20px;
+    }
+    .hero h1 {
+      font-size:4rem;
+      font-weight:bold;
+      margin-bottom:20px;
+    }
+    .hero p {
+      font-size:1.5rem;
+      margin-bottom:30px;
+    }
+    .hero a {
+      display:inline-block;
+      margin:0 10px;
+      padding:15px 30px;
+      background:#facc15;
+      color:#000;
+      font-weight:bold;
+      border-radius:9999px;
+      transition:all 0.2s ease;
+    }
+    .hero a:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 20px rgba(250,204,21,0.4);
+    }
+
+    #smpIpBtn {
+      position:fixed;
+      bottom:20px;
+      left:20px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      background:#facc15;
+      color:#000;
+      padding:16px 24px;
+      border-radius:9999px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:all 0.2s ease;
+      z-index:10;
+    }
+    #smpIpBtn:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 15px rgba(250,204,21,0.4);
+    }
+    #smpIpBtn svg {
+      width:20px;
+      height:20px;
+      fill:currentColor;
+    }
+
+    .features {
+      padding:100px 20px;
+      background:#111;
+      text-align:center;
+    }
+    .features h2 {
+      font-size:3rem;
+      font-weight:bold;
+      margin-bottom:50px;
+    }
+    .features-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+    .feature-card {
+      background:#222;
+      padding:30px;
+      border-radius:20px;
+      transition:transform 0.3s;
+    }
+    .feature-card:hover {
+      transform:translateY(-10px);
+    }
+    .feature-card h3 {
+      font-size:1.5rem;
+      margin-bottom:10px;
+    }
+  </style>
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
   <header>
-    <img src="kalarium_logo_flat.png" alt="Kalarium Logo">
+    <img src="kalarium_logo_flat.png" alt="Kalarium Logo" />
     <nav>
       <a href="/launcher">Launcher</a>
       <a href="/katalog">Katalog</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content aos-init aos-animate" data-aos="fade-down">
+    <div class="hero-content" data-aos="fade-down">
       <h1>Hoşgeldiniz!</h1>
       <p>Kalarium SMP sunucusuna bağlanmak için sol alttaki butonu kullanabilirsiniz.</p>
       <div>
-        <a href="/launcher" data-aos="fade-up" data-aos-delay="200" class="aos-init aos-animate">Launcher</a>
-        <a href="/katalog" data-aos="fade-up" data-aos-delay="400" class="aos-init aos-animate">Katalog</a>
+        <a href="/launcher" data-aos="fade-up" data-aos-delay="200">Launcher</a>
+        <a href="/katalog" data-aos="fade-up" data-aos-delay="400">Katalog</a>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
   <section class="features">
-    <h2 data-aos="fade-up" class="aos-init">Özelliklerimiz</h2>
+    <h2 data-aos="fade-up">Özelliklerimiz</h2>
     <div class="features-grid">
-      <div class="feature-card aos-init" data-aos="fade-up" data-aos-delay="100">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
         <h3>Kolay Kullanım</h3>
         <p>Her cihazda sorunsuz, modern tasarım ve basit arayüz.</p>
       </div>
-      <div class="feature-card aos-init" data-aos="fade-up" data-aos-delay="200">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
         <h3>Animasyonlu</h3>
         <p>Hover ve scroll animasyonları ile etkileşimli deneyim.</p>
       </div>
-      <div class="feature-card aos-init" data-aos="fade-up" data-aos-delay="300">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
         <h3>Responsive</h3>
         <p>Tüm ekran boyutlarında mükemmel uyum.</p>
       </div>
     </div>
   </section>
 
-  <!-- SMP IP Kopyala Butonu -->
   <div id="smpIpBtn">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
       <path d="M128 40c0-22.1 17.9-40 40-40s40 17.9 40 40l0 148.2c8.5-7.6 19.7-12.2 32-12.2c20.6 0 38.2 13 45 31.2c8.8-9.3 21.2-15.2 35-15.2c25.3 0 46 19.5 47.9 44.3c8.5-7.7 19.8-12.3 32.1-12.3c26.5 0 48 21.5 48 48l0 48 0 16 0 48c0 70.7-57.3 128-128 128l-16 0-64 0-.1 0-5.2 0c-5 0-9.9-.3-14.7-1c-55.3-5.6-106.2-34-140-79L8 336c-13.3-17.7-9.7-42.7 8-56s42.7-9.7 56 8l56 74.7L128 40zM240 304c0-8.8-7.2-16-16-16s-16 7.2-16 16l0 96c0 8.8 7.2 16 16 16s16-7.2 16-16l0-96zm48-16c-8.8 0-16 7.2-16 16l0 96c0 8.8 7.2 16 16 16s16-7.2 16-16l0-96c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16l0 96c0 8.8 7.2 16 16 16s16-7.2 16-16l0-96z"></path>
@@ -198,10 +193,9 @@
 
   <script>
     AOS.init({ once:true, duration:1000 });
-
     const smpBtn = document.getElementById('smpIpBtn');
     const smpText = document.getElementById('smpText');
-    const smpIp = "survivallsmmp.aternos.me"; // port yok
+    const smpIp = "survivallsmmp.aternos.me";
 
     smpBtn.addEventListener('click', ()=>{
       navigator.clipboard.writeText(smpIp).then(()=>{
@@ -211,6 +205,5 @@
       });
     });
   </script>
-
-
-</body></html>
+</body>
+</html>
