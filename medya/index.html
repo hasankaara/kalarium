@@ -1,33 +1,145 @@
-<!-- Medya Bölümü -->
-<div class="card">
-  <h1>Medya</h1>
-  <p>Survival SMP’yi tanıtan medya rütbesi sahiplerini burada görebilirsiniz.</p>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalarium Sunucu Kataloğu</title>
+  <link rel="icon" type="image/png" href="/kalarium_logo_flat.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <div class="instructions">
-    <h2>Medya Olmak İçin Gerekenler:</h2>
-    <ol>
-      <li>En az <strong>100 abone</strong> sahibi olmak.</li>
-      <li>Her videoda üst kısımda "<strong>Survival SMP’ye gelin</strong>" yazısı yer almalı.</li>
-      <li>Alt kısımda "<strong>survivallsmmp.aternos.me</strong>" IP’si görünmeli.</li>
-    </ol>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter', sans-serif;}
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: url('/kalarium_loading_screen.png') no-repeat center/cover;
+      color: #fff;
+      padding: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .card {
+      background: rgba(30,30,30,0.85);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+    }
+    .card h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg,#6ee7b7,#3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+    .versions {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+    .server-ip {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: #6ee7b7;
+      font-weight: 600;
+    }
+    .download-btn, .yt-btn, .tiktok-btn, .insta-btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      margin: 0.3rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .download-btn { background: linear-gradient(90deg, #3b82f6, #9333ea); }
+    .download-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+    .yt-btn { background: linear-gradient(90deg, #FF0000, #FF5555); }
+    .yt-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+    .tiktok-btn { background: linear-gradient(90deg, #000000, #ff0050); }
+    .tiktok-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+    .insta-btn { background: linear-gradient(90deg, #e1306c, #f77737); }
+    .insta-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(241,100,142,0.6); }
+    .footer {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #888;
+      text-align: center;
+    }
+    .media-list {
+      text-align: left;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+    .media-list li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+
+    <!-- PVP -->
+    <div class="card">
+      <h1>Kalarium PVP</h1>
+      <p>1.8.8 için en iyi PvP sunucusu</p>
+      <div class="versions">Sürüm: 1.8.8</div>
+      <div class="server-ip">IP: kalarium.aternos.me</div>
+      <a class="download-btn" href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" target="_blank">Launcher İndir</a>
+    </div>
+
+    <!-- Survival SMP -->
+    <div class="card">
+      <h1>Survival SMP</h1>
+      <p>Sesli sohbet ile en güncel sunucumuz</p>
+      <div class="versions">Sürüm: 1.12 - 1.21.8</div>
+      <div class="server-ip">IP: survivallsmmp.aternos.me</div>
+      <a class="download-btn" href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" target="_blank">Launcher İndir</a>
+      <a class="yt-btn" href="https://www.youtube.com/@SurvivallSMMP" target="_blank">YouTube Kanalına Git</a>
+      <a class="tiktok-btn" href="https://www.tiktok.com/@survivallsmmp" target="_blank">TikTok Kanalına Git</a>
+      <a class="insta-btn" href="https://www.instagram.com/survivallsmmp" target="_blank">Instagram Kanalına Git</a>
+    </div>
+
+    <!-- Kalarium SMP -->
+    <div class="card">
+      <h1>Kalarium SMP</h1>
+      <p>Bedrock desteği ve büyük destek ekibi ile en büyük sunucumuz</p>
+      <div class="versions">
+        Java: 1.12 - 1.21.8<br>
+        Bedrock: 1.21.96 - 1.21.101
+      </div>
+      <div class="server-ip">IP: kalarium_smp.aternos.me</div>
+      <a class="download-btn" href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" target="_blank">Launcher İndir</a>
+    </div>
+
+    <!-- Medya -->
+    <div class="card">
+      <h1>Medya Rütbesi</h1>
+      <p>Survival SMP'yi tanıtmak için gereken şartlar:</p>
+      <ul class="media-list">
+        <li>✅ En az 100 abone</li>
+        <li>✅ Her videonun başında "Survival SMP'ye gelin" yazısı</li>
+        <li>✅ Videonun alt kısmına IP: <strong>survivallsmmp.aternos.me</strong> eklenmeli</li>
+      </ul>
+      <a class="download-btn" href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" target="_blank">Launcher İndir</a>
+    </div>
+
   </div>
-
-  <div class="media-list" style="margin-top:1.5rem;">
-    <!-- Örnek medya kullanıcıları -->
-    <div class="media-item" style="margin-bottom:1rem;">
-      <strong>Örnek YouTuber 1</strong><br>
-      150 abone
-    </div>
-    <div class="media-item" style="margin-bottom:1rem;">
-      <strong>Örnek YouTuber 2</strong><br>
-      250 abone
-    </div>
-    <div class="media-item" style="margin-bottom:1rem;">
-      <strong>Örnek YouTuber 3</strong><br>
-      420 abone
-    </div>
-  </div>
-
-  <div class="server-ip">IP: survivallsmmp.aternos.me</div>
-  <a class="download-btn" href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" target="_blank">Launcher İndir</a>
-</div>
+</body>
+</html>
