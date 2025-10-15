@@ -46,80 +46,35 @@
       color: #ccc;
     }
     .versions {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       font-size: 0.95rem;
       color: #ddd;
     }
-    /* Butonlar */
-    .download-btn {
+    .server-ip {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: #6ee7b7;
+      font-weight: 600;
+    }
+    .download-btn, .yt-btn, .tiktok-btn, .insta-btn {
       display: inline-block;
       padding: 0.8rem 2rem;
       font-size: 1rem;
       font-weight: 600;
       color: #fff;
-      background: linear-gradient(90deg, #3b82f6, #9333ea);
       border-radius: 0.75rem;
       text-decoration: none;
       margin: 0.3rem;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .download-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    }
-    .yt-btn {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(90deg, #FF0000, #FF5555);
-      border-radius: 0.75rem;
-      text-decoration: none;
-      margin: 0.3rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .yt-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    }
-    .tiktok-btn {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(90deg, #000000, #ff0050);
-      border-radius: 0.75rem;
-      text-decoration: none;
-      margin: 0.3rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .tiktok-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    }
-    /* IP kopyalama butonu */
-    .ip-btn {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background: #444;
-      padding: 0.8rem 1rem;
-      border-radius: 0.75rem;
-      margin: 0.3rem auto;
-      max-width: 260px;
-      transition: background 0.2s;
-    }
-    .ip-btn:hover { background: #555; }
-    .ip-btn svg {
-      width: 20px;
-      height: 20px;
-      fill: #fff;
-    }
-    .ip-btn div { font-size: 0.9rem; }
+    .download-btn { background: linear-gradient(90deg, #3b82f6, #9333ea); }
+    .download-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+    .yt-btn { background: linear-gradient(90deg, #FF0000, #FF5555); }
+    .yt-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+    .tiktok-btn { background: linear-gradient(90deg, #000000, #ff0050); }
+    .tiktok-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+    .insta-btn { background: linear-gradient(90deg, #e1306c, #f77737); }
+    .insta-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(241,100,142,0.6); }
     .footer {
       margin-top: 1rem;
       font-size: 0.8rem;
@@ -136,13 +91,8 @@
       <h1>Kalarium PVP</h1>
       <p>1.8.8 için en iyi PvP sunucusu</p>
       <div class="versions">Sürüm: 1.8.8</div>
-      <div class="ip-btn" onclick="copyIp('kalarium.aternos.me', this)">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path d="M128 40c0-22.1 17.9-40 40-40s40 17.9 40 40l0 148.2c8.5-7.6 19.7-12.2 32-12.2c20.6 0 38.2 13 45 31.2c8.8-9.3 21.2-15.2 35-15.2c25.3 0 46 19.5 47.9 44.3c8.5-7.7 19.8-12.3 32.1-12.3c26.5 0 48 21.5 48 48l0 48 0 16 0 48c0 70.7-57.3 128-128 128l-16 0-64 0-.1 0-5.2 0c-5 0-9.9-.3-14.7-1c-55.3-5.6-106.2-34-140-79L8 336c-13.3-17.7-9.7-42.7 8-56s42.7-9.7 56 8l56 74.7L128 40z"/>
-        </svg>
-        <div>IP kopyala</div>
-      </div>
-      <div class="footer">IP: kalarium.aternos.me</div>
+      <div class="server-ip">IP: kalarium.aternos.me</div>
+      <a class="download-btn" href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" target="_blank">Launcher İndir</a>
     </div>
 
     <!-- Survival SMP -->
@@ -150,15 +100,11 @@
       <h1>Survival SMP</h1>
       <p>Sesli sohbet ile en güncel sunucumuz</p>
       <div class="versions">Sürüm: 1.12 - 1.21.8</div>
-      <div class="ip-btn" onclick="copyIp('survivallsmmp.aternos.me', this)">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path d="M128 40c0-22.1 17.9-40 40-40s40 17.9 40 40l0 148.2c8.5-7.6 19.7-12.2 32-12.2c20.6 0 38.2 13 45 31.2c8.8-9.3 21.2-15.2 35-15.2c25.3 0 46 19.5 47.9 44.3c8.5-7.7 19.8-12.3 32.1-12.3c26.5 0 48 21.5 48 48l0 48 0 16 0 48c0 70.7-57.3 128-128 128l-16 0-64 0-.1 0-5.2 0c-5 0-9.9-.3-14.7-1c-55.3-5.6-106.2-34-140-79L8 336c-13.3-17.7-9.7-42.7 8-56s42.7-9.7 56 8l56 74.7L128 40z"/>
-        </svg>
-        <div>IP kopyala</div>
-      </div>
+      <div class="server-ip">IP: survivallsmmp.aternos.me</div>
       <a class="download-btn" href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" target="_blank">Launcher İndir</a>
       <a class="yt-btn" href="https://www.youtube.com/@SurvivallSMMP" target="_blank">YouTube Kanalına Git</a>
       <a class="tiktok-btn" href="https://www.tiktok.com/@survivallsmmp" target="_blank">TikTok Kanalına Git</a>
+      <a class="insta-btn" href="https://www.instagram.com/hesabiniz" target="_blank">Instagram'da Takip Et</a>
     </div>
 
     <!-- Kalarium SMP -->
@@ -169,26 +115,10 @@
         Java: 1.12 - 1.21.8<br>
         Bedrock: 1.21.96 - 1.21.101
       </div>
-      <div class="ip-btn" onclick="copyIp('kalarium_smp.aternos.me', this)">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path d="M128 40c0-22.1 17.9-40 40-40s40 17.9 40 40l0 148.2c8.5-7.6 19.7-12.2 32-12.2c20.6 0 38.2 13 45 31.2c8.8-9.3 21.2-15.2 35-15.2c25.3 0 46 19.5 47.9 44.3c8.5-7.7 19.8-12.3 32.1-12.3c26.5 0 48 21.5 48 48l0 48 0 16 0 48c0 70.7-57.3 128-128 128l-16 0-64 0-.1 0-5.2 0c-5 0-9.9-.3-14.7-1c-55.3-5.6-106.2-34-140-79L8 336c-13.3-17.7-9.7-42.7 8-56s42.7-9.7 56 8l56 74.7L128 40z"/>
-        </svg>
-        <div>IP kopyala</div>
-      </div>
-      <div class="footer">IP: kalarium_smp.aternos.me</div>
+      <div class="server-ip">IP: kalarium_smp.aternos.me</div>
+      <a class="download-btn" href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" target="_blank">Launcher İndir</a>
     </div>
 
   </div>
-
-  <script>
-    function copyIp(ip, btn) {
-      navigator.clipboard.writeText(ip).then(() => {
-        const text = btn.querySelector("div");
-        const old = text.innerText;
-        text.innerText = "Kopyalandı!";
-        setTimeout(() => { text.innerText = old; }, 2000);
-      });
-    }
-  </script>
 </body>
 </html>
