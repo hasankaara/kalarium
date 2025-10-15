@@ -26,29 +26,45 @@
       box-shadow: 0 0 25px rgba(0,0,0,0.7);
       backdrop-filter: blur(6px);
       width: 100%;
-      max-width: 900px; /* Kenarlardan boşluk bırakmak için */
+      max-width: 1000px; /* Daha büyük */
     }
     .card h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
       background: linear-gradient(90deg,#6ee7b7,#3b82f6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .card p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
       color: #ccc;
     }
-    .media-list {
+    .section-title {
+      font-size: 1.5rem;
+      color: #6ee7b7;
+      margin-bottom: 1rem;
+    }
+    .media-list, .members-list {
       text-align: left;
-      margin: 2rem 0;
-      font-size: 1rem;
+      margin: 1.5rem 0 2rem 0;
+      font-size: 1.1rem;
       color: #ddd;
       line-height: 1.6;
+      list-style: none;
+      padding-left: 0;
     }
-    .media-list li {
+    .media-list li, .members-list li {
       margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      background: rgba(50,50,50,0.4);
+      border-radius: 0.75rem;
+    }
+    .members-list li {
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      text-align: center;
     }
   </style>
 </head>
@@ -60,6 +76,11 @@
       <li>✅ En az 100 abone</li>
       <li>✅ Her videonun başında "Survival SMP'ye gelin" yazısı</li>
       <li>✅ Videonun alt kısmına IP: <strong>survivallsmmp.aternos.me</strong> eklenmeli</li>
+    </ul>
+
+    <div class="section-title">Medya Rütbesi Olanlar</div>
+    <ul class="members-list">
+      <li>Cinar</li>
     </ul>
   </div>
 </body>
