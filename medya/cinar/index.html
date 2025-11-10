@@ -3,63 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Çınar - Kalarium Medya+</title>
+  <title>Çınar - Kalarium Medya</title>
   <meta name="description" content="Çınar’ın Kalarium Medya profili. Oyundaki adı, rütbesi ve sosyal medya hesapları burada.">
-  <link rel="icon" type="image/png" href="/kalarium-logo-flat.png">
+  <link rel="icon" type="image/png" href="/kalarium_logo_flat.png">
   <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter, sans-serif;}
     body {
-      font-family: Inter, sans-serif;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background: #111;
+      background: url('/kalarium_loading_screen.png') no-repeat center/cover;
       color: #fff;
-      margin: 0;
-      padding: 0;
     }
-    .profile {
+    .card {
       background: rgba(30,30,30,0.95);
-      padding: 2rem 3rem;
-      border-radius: 1rem;
+      padding: 3rem 2rem;
+      border-radius: 1.5rem;
       text-align: center;
-      max-width: 400px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      max-width: 500px;
       width: 100%;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
-    .profile img {
+    .card img {
       border-radius: 10px;
       margin-bottom: 1rem;
       max-width: 100%;
       height: auto;
     }
-    .profile h1 {
+    .card h1 {
       font-size: 2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg,#6ee7b7,#3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+    .download-btn, .social-links a {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      border-radius: 0.75rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin: 0.3rem;
+    }
+    .download-btn:hover, .social-links a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+    .instructions {
+      margin-top: 2rem;
+      text-align: left;
+      font-size: 0.95rem;
+      color: #ddd;
+      line-height: 1.5;
+    }
+    .instructions h2 {
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
       color: #6ee7b7;
     }
-    .profile p {
-      margin-bottom: 1rem;
-      color: #ccc;
+    .instructions ol {
+      padding-left: 20px;
     }
-    .social-links a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.5rem 1rem;
-      color: #fff;
-      background: #3b82f6;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .social-links a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    .footer {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #888;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div class="profile">
+  <div class="card">
     <!-- 3D Skin Fotoğrafı -->
     <img src="/cinar.png" alt="Çınar Avatar">
 
@@ -74,6 +98,9 @@
       <a href="https://tiktok.com/" target="_blank">Tiktok</a>
       <a href="https://instagram.com/" target="_blank">Instagram</a>
     </div>
+
+    <div class="footer">Sürüm: 1.4 • Sadece Windows</div>
   </div>
 </body>
 </html>
+
