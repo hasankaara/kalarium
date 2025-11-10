@@ -1,106 +1,140 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Çınar - Kalarium Medya</title>
-  <meta name="description" content="Çınar’ın Kalarium Medya profili. Oyundaki adı, rütbesi ve sosyal medya hesapları burada.">
-  <link rel="icon" type="image/png" href="/kalarium_logo_flat.png">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter, sans-serif;}
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: url('/kalarium_loading_screen.png') no-repeat center/cover;
-      color: #fff;
-    }
-    .card {
-      background: rgba(30,30,30,0.95);
-      padding: 3rem 2rem;
-      border-radius: 1.5rem;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      max-width: 500px;
-      width: 100%;
-    }
-    .card img {
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      max-width: 100%;
-      height: auto;
-    }
-    .card h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg,#6ee7b7,#3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .card p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      color: #ccc;
-    }
-    .download-btn, .social-links a {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(90deg, #3b82f6, #9333ea);
-      border-radius: 0.75rem;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      margin: 0.3rem;
-    }
-    .download-btn:hover, .social-links a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    }
-    .instructions {
-      margin-top: 2rem;
-      text-align: left;
-      font-size: 0.95rem;
-      color: #ddd;
-      line-height: 1.5;
-    }
-    .instructions h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #6ee7b7;
-    }
-    .instructions ol {
-      padding-left: 20px;
-    }
-    .footer {
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: #888;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Çınar - Kalarium Medya</title>
+<link rel="icon" type="image/png" href="/kalarium_logo_flat.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    margin:0;
+    font-family:Inter,sans-serif;
+    background: url('/kalarium_loading_screen.png') no-repeat center/cover;
+    background-size: cover;
+    color:#fff;
+  }
+  .container {
+    max-width:1200px;
+    margin:60px auto;
+    display:flex;
+    gap:30px;
+    background: rgba(30,30,30,0.85);
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+  }
+  .left-panel {
+    flex:0 0 200px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .left-panel img {
+    width:150px;
+    border-radius:10px;
+    margin-bottom:20px;
+  }
+  .social-links {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+  }
+  .social-links a {
+    text-align:center;
+    padding:10px;
+    font-weight:bold;
+    border-radius:10px;
+    text-decoration:none;
+    color:#fff;
+    transition:0.3s;
+  }
+  .youtube {background: linear-gradient(90deg,#ff0000,#ff5555);}
+  .tiktok {background: linear-gradient(90deg,#69C9D0,#EE1D52);}
+  .instagram {background: linear-gradient(90deg,#fdf497,#fd5949,#d6249f,#285AEB);}
+  .social-links a:hover {transform: scale(1.05);}
+  .right-panel {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:20px;
+  }
+  .info {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .info p span {
+    font-weight:bold;
+    color:#6ee7b7;
+    cursor:pointer;
+  }
+  .chart-container {
+    margin-top:20px;
+    flex:1;
+    background:#222;
+    border-radius:15px;
+    padding:20px;
+    position:relative;
+  }
+  canvas {
+    width:100%;
+    height:100%;
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <!-- 3D Skin Fotoğrafı -->
+<div class="container">
+  <div class="left-panel">
     <img src="/cinar.png" alt="Çınar Avatar">
-
-    <!-- Kullanıcı Bilgileri -->
-    <h1>Çınar</h1>
-    <p>Oyundaki Adı: <strong>cinar</strong></p>
-    <p>Rütbesi: <strong>Medya+</strong></p>
-
-    <!-- Sosyal Medya Linkleri -->
     <div class="social-links">
-      <a href="https://www.youtube.com/@cinarpro53" target="_blank">YouTube</a>
-      <a href="https://tiktok.com/" target="_blank">Tiktok</a>
-      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@cinarpro53" class="youtube" target="_blank">YouTube</a>
+      <a href="https://tiktok.com/" class="tiktok" target="_blank">TikTok</a>
+      <a href="https://instagram.com/" class="instagram" target="_blank">Instagram</a>
     </div>
-
-    <div class="footer">Sürüm: 1.4 • Sadece Windows</div>
   </div>
+  <div class="right-panel">
+    <div class="info">
+      <p>Oyundaki Adı: <span>cinar</span></p>
+      <p>Rütbesi: <span>Medya+</span></p>
+      <p>Favori Sunucusu: <span id="favServer" title="Tıkla kopyala">aesirmc</span></p>
+    </div>
+    <div class="chart-container">
+      <canvas id="loginChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Favori sunucu IP kopyalama
+  const favServer = document.getElementById('favServer');
+  favServer.addEventListener('click',()=>{
+    navigator.clipboard.writeText('survivallsmmp.aternos.me').then(()=>{
+      alert('IP kopyalandı!');
+    });
+  });
+
+  // Placeholder giriş sıklığı grafiği
+  const ctx = document.getElementById('loginChart').getContext('2d');
+  new Chart(ctx, {
+    type:'bar',
+    data:{
+      labels:['Pzt','Salı','Çar','Per','Cum','Cmt','Paz'],
+      datasets:[{
+        label:'Giriş Sıklığı',
+        data:[3,5,2,4,6,1,0],
+        backgroundColor:'rgba(110,231,183,0.8)'
+      }]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      scales:{y:{beginAtZero:true}}
+    }
+  });
+</script>
 </body>
 </html>
-
