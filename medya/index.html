@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
+<html lang="tr"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>efem1986 - Kalarium Medya</title>
+  <title>Kalarium SMP | Medya Rütbesi</title>
   <link rel="icon" type="image/png" href="/kalarium_logo_flat.png">
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
     
     body { 
       overflow-x:hidden; 
-      /* Medya sayfasıyla aynı karartma oranı */
+      /* Arka planı daha siyah yapmak için linear-gradient eklendi */
       background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('/kalarium_loading_screen.png') no-repeat center center fixed;
       background-size: cover;
       color:#fff; 
@@ -28,7 +26,7 @@
       backdrop-filter: blur(10px); position:fixed; top:0; width:100%; z-index:1000;
       border-bottom: 1px solid #222;
     }
-
+    
     .nav-links { display: none; gap: 20px; align-items: center; }
     @media (min-width: 769px) { .nav-links { display: flex; } }
 
@@ -63,7 +61,7 @@
     }
     .overlay.active { display: block; }
 
-    /* MOBILE NAV */
+    /* MOBİL NAV */
     @media (max-width: 768px) {
       body { padding-bottom: 80px; }
       .mobile-nav {
@@ -85,18 +83,15 @@
       border-radius:9999px; cursor:pointer; font-weight:bold; z-index:90; font-size: 0.85rem;
     }
 
-    .profile-card {
-      background: rgba(21, 21, 21, 0.9);
-      border: 1px solid #222;
-      backdrop-filter: blur(10px);
+    .condition-card { background: rgba(20, 20, 20, 0.6); border: 1px solid #333; }
+    .media-member { 
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      transition: all 0.3s ease;
     }
-    
-    .youtube-btn { background: linear-gradient(90deg, #ff0000, #cc0000); }
-    .insta-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-    .stat-box { background: rgba(0,0,0,0.4); border: 1px solid #333; }
+    .media-member:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4); }
   </style>
-</head>
-<body>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.flex{display:flex}.grid{display:grid}.h-0\.5{height:0.125rem}.h-1\.5{height:0.375rem}.w-12{width:3rem}.w-5{width:1.25rem}.max-w-4xl{max-width:56rem}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.gap-1{gap:0.25rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-\[\#222\]{--tw-border-opacity:1;border-color:rgb(34 34 34 / var(--tw-border-opacity, 1))}.bg-\[\#151515\]\/90{background-color:rgb(21 21 21 / 0.9)}.bg-\[\#FFAA00\]{--tw-bg-opacity:1;background-color:rgb(255 170 0 / var(--tw-bg-opacity, 1))}.bg-\[\#FFAA00\]\/10{background-color:rgb(255 170 0 / 0.1)}.bg-gray-700{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-5{padding:1.25rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-black{font-weight:900}.font-bold{font-weight:700}.text-\[\#55FF55\]{--tw-text-opacity:1;color:rgb(85 255 85 / var(--tw-text-opacity, 1))}.text-\[\#55FFFF\]{--tw-text-opacity:1;color:rgb(85 255 255 / var(--tw-text-opacity, 1))}.text-\[\#FFAA00\]{--tw-text-opacity:1;color:rgb(255 170 0 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.hover\:text-\[\#FFAA00\]:hover{--tw-text-opacity:1;color:rgb(255 170 0 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:p-12{padding:3rem}.md\:text-5xl{font-size:3rem;line-height:1}}</style></head>
+<body data-aos-easing="ease" data-aos-duration="800" data-aos-delay="0">
 
   <header>
     <div class="flex items-center gap-4"><img src="/kalarium_logo_flat.png" alt="Logo" style="height: 35px;"></div>
@@ -138,43 +133,33 @@
     <a href="https://jubbio.com/invite/ATSAQrgU"><span>JUBBIO</span></a>
   </div>
 
-  <main class="max-w-6xl mx-auto px-6 py-10">
-    <div class="profile-card rounded-3xl p-6 md:p-10 flex flex-col md:flex-row gap-10 shadow-2xl" data-aos="zoom-in">
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <div class="bg-[#151515]/90 border border-[#222] p-8 md:p-12 rounded-3xl shadow-2xl backdrop-blur-md aos-init aos-animate" data-aos="fade-up">
+      <h1 class="text-4xl md:text-5xl font-black text-[#FFAA00] mb-4 text-center">MEDYA RÜTBESİ</h1>
+      <p class="text-gray-400 text-center text-lg mb-10">Topluluğumuzu tanıtmak için gereken şartlar:</p>
       
-      <div class="flex flex-col items-center gap-6 min-w-[260px]">
-        <h2 class="text-3xl font-black text-[#FFAA00]">efem1986</h2>
-        <div class="relative group">
-          <img src="/efem1986.png" alt="Avatar" class="w-52 h-52 rounded-3xl border-2 border-[#FFAA00] shadow-2xl transition-transform group-hover:scale-105">
-          <div class="absolute -bottom-3 -right-3 bg-[#55FF55] text-black text-xs font-bold px-3 py-1 rounded-full border-2 border-[#151515]">AKTİF</div>
+      <div class="space-y-4 mb-12">
+        <div class="condition-card p-5 rounded-2xl flex gap-4 items-start aos-init aos-animate" data-aos="fade-left" data-aos-delay="100">
+          <span class="text-[#55FF55] text-xl">✅</span>
+          <p class="text-gray-300">Attığınız videonun en az <strong>1000 kişi</strong> tarafından izlenmesi ve <strong>10 kişinin</strong> videonuzdan sunucuya gelmesi gerekir.</p>
         </div>
-        <div class="w-full space-y-3 mt-4">
-          <a href="https://www.youtube.com/@editproefe1986" target="_blank" class="youtube-btn w-full block text-center py-4 rounded-2xl font-black text-white hover:brightness-110 transition-all shadow-lg">YOUTUBE</a>
-          <a href="https://www.instagram.com/efem83668" target="_blank" class="insta-btn w-full block text-center py-4 rounded-2xl font-black text-white hover:brightness-110 transition-all shadow-lg">INSTAGRAM</a>
+        <div class="condition-card p-5 rounded-2xl flex gap-4 items-start aos-init aos-animate" data-aos="fade-left" data-aos-delay="200">
+          <span class="text-[#55FF55] text-xl">✅</span>
+          <p class="text-gray-300">Her videonun başında site adresi: <span class="text-[#FFAA00] font-mono">kalarium.vercel.app</span> yazmalı.</p>
         </div>
-      </div>
-
-      <div class="flex-1 flex flex-col gap-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="stat-box p-5 rounded-2xl">
-            <p class="text-[10px] text-gray-500 uppercase tracking-widest font-black mb-1">Oyuncu Kimliği</p>
-            <p class="text-white font-bold text-lg">efem1986</p>
-          </div>
-          <div class="stat-box p-5 rounded-2xl border-l-4 border-l-[#55FF55]">
-            <p class="text-[10px] text-gray-500 uppercase tracking-widest font-black mb-1">Mevcut Rütbe</p>
-            <p class="text-[#55FF55] font-black text-lg italic">MEDYA++</p>
-          </div>
-          <div class="stat-box p-5 rounded-2xl cursor-pointer hover:border-[#FFAA00] transition-colors" id="favServer" title="Tıkla kopyala">
-            <p class="text-[10px] text-gray-500 uppercase tracking-widest font-black mb-1">Favori Sunucusu</p>
-            <p class="text-[#FFAA00] font-bold text-lg">esmp.aternos.me</p>
-          </div>
-        </div>
-
-        <div class="stat-box p-6 rounded-3xl flex-1 min-h-[350px]">
-          <h3 class="text-xs font-bold text-gray-500 mb-6 uppercase tracking-widest">Haftalık Sunucu Aktivitesi</h3>
-          <canvas id="loginChart"></canvas>
+        <div class="condition-card p-5 rounded-2xl flex gap-4 items-start aos-init aos-animate" data-aos="fade-left" data-aos-delay="300">
+          <span class="text-[#55FF55] text-xl">✅</span>
+          <p class="text-gray-300">Videonun açıklama kısmına <span class="text-[#55FFFF]">IP: oynayacağınız sunucu adresi</span> eklenmeli.</p>
         </div>
       </div>
 
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-[#55FF55] mb-6">Medyalarımız</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="/medya/cinar" class="media-member py-4 rounded-xl font-bold text-white text-lg">cinar</a>
+          <a href="/medya/efem1986" class="media-member py-4 rounded-xl font-bold text-white text-lg">efem1986</a>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -182,7 +167,6 @@
     <span id="smpText">IP: esmp.aternos.me</span>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     AOS.init({ once: true, duration: 800 });
     const smpIp = "esmp.aternos.me";
@@ -198,39 +182,7 @@
       txt.innerText = "Kopyalandı!";
       setTimeout(() => { txt.innerText = "IP: " + smpIp; }, 2000);
     }
-
-    // Favori Sunucu IP Kopyalama
-    document.getElementById('favServer').addEventListener('click', () => {
-      navigator.clipboard.writeText(smpIp);
-      alert('Sunucu IP adresi kopyalandı: ' + smpIp);
-    });
-
-    // Grafik Yapılandırması
-    const ctx = document.getElementById('loginChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Pzt', 'Salı', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'],
-        datasets: [{
-          label: 'Giriş Sıklığı',
-          data: [2, 4, 7, 3, 8, 5, 2],
-          backgroundColor: '#FFAA00',
-          borderRadius: 10,
-          hoverBackgroundColor: '#55FF55'
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { 
-          legend: { display: false }
-        },
-        scales: {
-          y: { beginAtZero: true, grid: { color: '#222' }, ticks: { color: '#555' } },
-          x: { grid: { display: false }, ticks: { color: '#888' } }
-        }
-      }
-    });
   </script>
-</body>
-</html>
+
+
+</body></html>
