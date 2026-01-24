@@ -7,19 +7,18 @@
   <link rel="icon" type="image/png" href="/kalarium_logo_flat.png">
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
     
     body { 
       overflow-x:hidden; 
-      /* Medya sayfasıyla aynı karartma oranı */
       background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('/kalarium_loading_screen.png') no-repeat center center fixed;
       background-size: cover;
       color:#fff; 
-      padding-top: 100px; 
+      padding-top: 80px; 
     }
 
     header {
@@ -28,13 +27,6 @@
       backdrop-filter: blur(10px); position:fixed; top:0; width:100%; z-index:1000;
       border-bottom: 1px solid #222;
     }
-
-    .nav-links { display: none; gap: 20px; align-items: center; }
-    @media (min-width: 769px) { .nav-links { display: flex; } }
-
-    .menu-btn-desktop { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
-    @media (min-width: 769px) { .menu-btn-desktop { display: flex; } }
-    .menu-btn-desktop div { width: 25px; height: 3px; background: #FFAA00; border-radius: 5px; }
 
     /* SIDEBAR */
     .sidebar {
@@ -52,9 +44,9 @@
         padding: 30px 25px 100px 25px; 
       }
       .sidebar.active { bottom: 0; }
-      .sidebar a { font-size: 1.1rem !important; margin-bottom: 12px !important; text-align: center; border-bottom: 1px solid #222; padding-bottom: 8px; }
     }
-    .sidebar a { color: #fff; font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; transition: 0.3s; }
+    .sidebar a { color: #fff; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px; transition: 0.3s; }
+    .sidebar a:hover { color: #FFAA00; }
 
     .overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -83,30 +75,34 @@
       position:fixed; bottom:85px; left:20px;
       background:#FFAA00; color:#000; padding:10px 18px;
       border-radius:9999px; cursor:pointer; font-weight:bold; z-index:90; font-size: 0.85rem;
+      transition: 0.3s;
     }
+    #smpIpBtn:hover { transform: scale(1.05); }
 
-    .profile-card {
-      background: rgba(21, 21, 21, 0.9);
-      border: 1px solid #222;
-      backdrop-filter: blur(10px);
-    }
-    
+    .profile-card { background: rgba(21, 21, 21, 0.9); border: 1px solid #222; backdrop-filter: blur(10px); }
     .youtube-btn { background: linear-gradient(90deg, #ff0000, #cc0000); }
     .insta-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
     .stat-box { background: rgba(0,0,0,0.4); border: 1px solid #333; }
+    
+    /* Grafik Konteynırı */
+    .chart-container { position: relative; height: 300px; width: 100%; }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="flex items-center gap-4"><img src="/kalarium_logo_flat.png" alt="Logo" style="height: 35px;"></div>
+    <div class="flex items-center gap-4">
+        <img src="/kalarium_logo_flat.png" alt="Logo" style="height: 35px;">
+    </div>
     <div class="flex items-center gap-6">
-      <div class="nav-links">
+      <div class="hidden md:flex gap-6">
         <a href="/" class="text-sm font-bold hover:text-[#FFAA00]">ANA SAYFA</a>
         <a href="/katalog" class="text-sm font-bold hover:text-[#FFAA00]">KATALOG</a>
       </div>
-      <div class="menu-btn-desktop" onclick="toggleMenu()">
-        <div></div><div></div><div></div>
+      <div class="cursor-pointer flex flex-col gap-1.5" onclick="toggleMenu()">
+        <div class="w-6 h-0.5 bg-[#FFAA00]"></div>
+        <div class="w-6 h-0.5 bg-[#FFAA00]"></div>
+        <div class="w-6 h-0.5 bg-[#FFAA00]"></div>
       </div>
     </div>
   </header>
@@ -132,7 +128,7 @@
         <div class="w-5 h-0.5 bg-[#FFAA00]"></div>
         <div class="w-5 h-0.5 bg-[#FFAA00]"></div>
       </div>
-      <span class="text-[#FFAA00]">MENÜ</span>
+      <span class="text-[#FFAA00] mt-1">MENÜ</span>
     </div>
     <a href="/medya" class="text-[#FFAA00]"><span>MEDYA</span></a>
     <a href="https://jubbio.com/invite/ATSAQrgU"><span>JUBBIO</span></a>
@@ -163,15 +159,17 @@
             <p class="text-[10px] text-gray-500 uppercase tracking-widest font-black mb-1">Mevcut Rütbe</p>
             <p class="text-[#55FF55] font-black text-lg italic">MEDYA++</p>
           </div>
-          <div class="stat-box p-5 rounded-2xl cursor-pointer hover:border-[#FFAA00] transition-colors" id="favServer" title="Tıkla kopyala">
+          <div class="stat-box p-5 rounded-2xl cursor-pointer hover:border-[#FFAA00] transition-colors" id="favServer">
             <p class="text-[10px] text-gray-500 uppercase tracking-widest font-black mb-1">Favori Sunucusu</p>
             <p class="text-[#FFAA00] font-bold text-lg">esmp.aternos.me</p>
           </div>
         </div>
 
-        <div class="stat-box p-6 rounded-3xl flex-1 min-h-[350px]">
+        <div class="stat-box p-6 rounded-3xl flex-1">
           <h3 class="text-xs font-bold text-gray-500 mb-6 uppercase tracking-widest">Haftalık Sunucu Aktivitesi</h3>
-          <canvas id="loginChart"></canvas>
+          <div class="chart-container">
+            <canvas id="loginChart"></canvas>
+          </div>
         </div>
       </div>
 
@@ -182,9 +180,13 @@
     <span id="smpText">IP: esmp.aternos.me</span>
   </div>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
   <script>
+    // AOS Başlatma
     AOS.init({ once: true, duration: 800 });
+
     const smpIp = "esmp.aternos.me";
 
     function toggleMenu() {
@@ -199,13 +201,12 @@
       setTimeout(() => { txt.innerText = "IP: " + smpIp; }, 2000);
     }
 
-    // Favori Sunucu IP Kopyalama
     document.getElementById('favServer').addEventListener('click', () => {
       navigator.clipboard.writeText(smpIp);
       alert('Sunucu IP adresi kopyalandı: ' + smpIp);
     });
 
-    // Grafik Yapılandırması
+    // Grafik Düzeltilmiş Yapılandırma
     const ctx = document.getElementById('loginChart').getContext('2d');
     new Chart(ctx, {
       type: 'bar',
@@ -215,16 +216,14 @@
           label: 'Giriş Sıklığı',
           data: [2, 4, 7, 3, 8, 5, 2],
           backgroundColor: '#FFAA00',
-          borderRadius: 10,
+          borderRadius: 6,
           hoverBackgroundColor: '#55FF55'
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { 
-          legend: { display: false }
-        },
+        plugins: { legend: { display: false } },
         scales: {
           y: { beginAtZero: true, grid: { color: '#222' }, ticks: { color: '#555' } },
           x: { grid: { display: false }, ticks: { color: '#888' } }
@@ -232,5 +231,6 @@
       }
     });
   </script>
+
 </body>
 </html>
