@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta name="google-site-verification" content="XmmZx_io46TWXv0FpGpwLamPj-etyspJYKVQsaGkZV4" />
+  <link rel="icon" type="image/png" href="/kalarium_logo_flat.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalarium SMP | Ana Sayfa</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
+    body { overflow-x:hidden; background:#0f0f0f; color:#fff; }
+
+    header {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:15px 25px; background:rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px); position:fixed; top:0; width:100%; z-index:1000;
+      border-bottom: 1px solid #222;
+    }
+    
+    .nav-links { display: none; gap: 20px; align-items: center; }
+    @media (min-width: 769px) { .nav-links { display: flex; } }
+
+    .menu-btn-desktop { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+    @media (min-width: 769px) { .menu-btn-desktop { display: flex; } }
+    .menu-btn-desktop div { width: 25px; height: 3px; background: #FFAA00; border-radius: 5px; }
+
+    .sidebar {
+      position: fixed; background: #111; z-index: 10000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column; 
+    }
+
+    @media (min-width: 769px) {
+      .sidebar { top: 0; right: -300px; width: 300px; height: 100%; border-left: 2px solid #FFAA00; padding: 100px 40px; }
+      .sidebar.active { right: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar { 
+        bottom: -100%; left: 0; width: 100%; height: auto; 
+        border-top: 3px solid #FFAA00; border-radius: 25px 25px 0 0;
+        padding: 30px 25px 100px 25px; 
+      }
+      .sidebar.active { bottom: 0; }
+      .sidebar a { font-size: 1.1rem !important; margin-bottom: 12px !important; text-align: center; border-bottom: 1px solid #222; padding-bottom: 8px; }
+    }
+
+    .sidebar a { color: #fff; font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; transition: 0.3s; }
+
+    .overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); z-index: 9999; display: none;
+      backdrop-filter: blur(4px);
+    }
+    .overlay.active { display: block; }
+
+    @media (max-width: 768px) {
+      body { padding-bottom: 70px; }
+      .mobile-nav {
+        display: flex; position: fixed; bottom: 0; left: 0; width: 100%;
+        background: rgba(10, 10, 10, 0.98); backdrop-filter: blur(15px);
+        justify-content: space-evenly; align-items: center; padding: 12px 0; 
+        border-top: 1px solid #333; z-index: 10001;
+      }
+      .mobile-nav a, .mobile-menu-trigger { 
+        color: #888; font-size: 0.65rem; font-weight: bold; text-align: center; 
+        display: flex; flex-direction: column; align-items: center; gap: 4px;
+        flex: 1;
+      }
+      .mobile-nav a.active { color: #FFAA00; }
+    }
+    @media (min-width: 769px) { .mobile-nav { display: none; } }
+
+    .hero {
+      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('kalarium_loading_screen.png');
+      background-size: cover; background-position: center; height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    }
+
+    .hero-btn { width: 100%; max-width: 250px; padding: 12px; font-size: 1rem; }
+    @media (min-width: 768px) { .hero-btn { width: auto; max-width: none; padding: 16px 40px; font-size: 1.25rem; } }
+
+    #smpIpBtn {
+      position:fixed; bottom:85px; left:20px;
+      background:#FFAA00; color:#000; padding:10px 18px;
+      border-radius:9999px; cursor:pointer; font-weight:bold; z-index:90; font-size: 0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="flex items-center gap-4"><img src="kalarium_logo_flat.png" alt="Logo" style="height: 35px;"></div>
+    <div class="flex items-center gap-6">
+      <div class="nav-links">
+        <a href="/launcher" class="text-sm font-bold hover:text-[#FFAA00]">LAUNCHER</a>
+        <a href="/katalog" class="text-sm font-bold hover:text-[#FFAA00]">KATALOG</a>
+      </div>
+      <div class="menu-btn-desktop" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <div class="sidebar" id="sidebar">
+    <div class="md:hidden w-12 h-1.5 bg-gray-700 rounded-full mx-auto mb-6"></div>
+    <a href="/">Ana Sayfa</a>
+    <a href="/launcher">Launcher</a>
+    <a href="/katalog">Katalog</a>
+    <a href="/medya">Medya</a>
+    <a href="https://jubbio.com/invite/ATSAQrgU">Jubbio Topluluğu</a>
+    <a href="mailto:iletisim@kalarium.com" style="color: #55FF55;">İletişim</a>
+  </div>
+
+  <div class="mobile-nav">
+    <a href="/" class="active"><span>ANA SAYFA</span></a>
+    <a href="/katalog"><span>KATALOG</span></a>
+    
+    <div class="mobile-menu-trigger" onclick="toggleMenu()">
+      <div class="flex flex-col gap-1 items-center bg-[#FFAA00]/10 p-2 rounded-xl">
+        <div class="w-5 h-0.5 bg-[#FFAA00]"></div>
+        <div class="w-5 h-0.5 bg-[#FFAA00]"></div>
+        <div class="w-5 h-0.5 bg-[#FFAA00]"></div>
+      </div>
+      <span class="text-[#FFAA00]">MENÜ</span>
+    </div>
+
+    <a href="/medya"><span>MEDYA</span></a>
+    <a href="https://jubbio.com/invite/ATSAQrgU"><span>JUBBIO</span></a>
+  </div>
+
+  <section class="hero">
+    <div data-aos="zoom-in" class="px-6 w-full flex flex-col items-center">
+      <h1 class="text-4xl md:text-7xl font-black text-[#FFAA00] mb-4">KALARIUM SMP</h1>
+      <p class="text-gray-300 text-base md:text-2xl mb-8 max-w-2xl mx-auto px-4">Efe SMP ve Survival SMP dünyasına şimdi adım at!</p>
+      
+      <div class="flex flex-col md:flex-row gap-4 justify-center items-center w-full px-8">
+        <button id="mainPlayBtn" class="hero-btn bg-[#FFAA00] text-black rounded-full font-black hover:scale-105 transition-transform shadow-lg">
+          ŞİMDİ OYNA
+        </button>
+        <a href="/katalog" class="hero-btn bg-transparent border-2 border-white text-white rounded-full font-black hover:bg-white hover:text-black transition-all text-center">
+          KATALOG
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-6">
+    <h2 class="text-center text-3xl md:text-5xl font-bold mb-16 text-[#55FF55]" data-aos="fade-up">Sunucu Özellikleri</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      
+      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+        <h3 style="color: #FFAA00;" class="text-xl font-bold mb-4">🌍 Klasik Survival</h3>
+        <p class="text-gray-400">Efe SMP ve Survival SMP'de özlediğin o saf ve doğal survival deneyimi seni bekliyor.</p>
+      </div>
+
+      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+        <h3 style="color: #55FF55;" class="text-xl font-bold mb-4">🛡️ Kalarium Claim</h3>
+        <p class="text-gray-400">Sadece Kalarium sunucumuza özel geliştirilmiş claim sistemi ile yapılarını güvene al.</p>
+      </div>
+
+      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+        <h3 style="color: #55FFFF;" class="text-xl font-bold mb-4">💎 Adaletli Oyun</h3>
+        <p class="text-gray-400">Tüm sunucularımızda hilesiz, küfürsüz ve saygılı bir topluluk ortamı sağlıyoruz.</p>
+      </div>
+
+      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="400">
+        <h3 style="color: #AA00AA;" class="text-xl font-bold mb-4">🤝 Jubbio Topluluğu</h3>
+        <p class="text-gray-400">Discord yerine Jubbio kullanıyoruz! Aramıza katılmak için topluluğumuza gel.</p>
+      </div>
+
+      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="500">
+        <h3 style="color: #FFFF55;" class="text-xl font-bold mb-4">📅 Her Cumartesi Event</h3>
+        <p class="text-gray-400">Her hafta Cumartesi düzenlenen etkinliklerde değerli ödüller dağıtıyoruz!</p>
+      </div>
+
+      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="600">
+        <h3 style="color: #FF5555;" class="text-xl font-bold mb-4">⚔️ Gerçek SMP Ruhu</h3>
+        <p class="text-gray-400">Dostluk, ticaret ve büyük maceralar tüm sunucularımızda seni bekliyor.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="smpIpBtn" onclick="copyIp()">
+    <span id="smpText">IP: esmp.aternos.me</span>
+  </div>
+
+  <script>
+    AOS.init({ once: true, duration: 1000 });
+    const smpIp = "esmp.aternos.me";
+
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+      document.getElementById('overlay').classList.toggle('active');
+    }
+
+    function copyIp() {
+      navigator.clipboard.writeText(smpIp);
+      const txt = document.getElementById('smpText');
+      txt.innerText = "Kopyalandı!";
+      setTimeout(() => { txt.innerText = "IP: " + smpIp; }, 2000);
+    }
+
+    document.getElementById('mainPlayBtn').addEventListener('click', async function() {
+      const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+      if (isMobile) {
+        try { await navigator.clipboard.writeText(smpIp); } catch (e) {}
+        window.location.href = "minecraft://";
+        setTimeout(() => {
+          if (navigator.share) {
+            navigator.share({
+              title: 'Kalarium SMP IP',
+              text: 'Sunucu IP kopyalandı: ' + smpIp,
+            }).catch(() => {});
+          }
+        }, 1500);
+      } else {
+        window.location.href = "/launcher";
+      }
+    });
+  </script>
+</body>
+</html>

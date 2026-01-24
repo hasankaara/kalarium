@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalarium SMP | Launcher İndir</title>
+  <link rel="icon" type="image/png" href="/kalarium_logo_flat.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
+    body { overflow-x:hidden; background:#0f0f0f; color:#fff; padding-top: 100px; }
+
+    header {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:15px 25px; background:rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px); position:fixed; top:0; width:100%; z-index:1000;
+      border-bottom: 1px solid #222;
+    }
+    
+    .nav-links { display: none; gap: 20px; align-items: center; }
+    @media (min-width: 769px) { .nav-links { display: flex; } }
+
+    .menu-btn-desktop { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+    @media (min-width: 769px) { .menu-btn-desktop { display: flex; } }
+    .menu-btn-desktop div { width: 25px; height: 3px; background: #FFAA00; border-radius: 5px; }
+
+    .sidebar {
+      position: fixed; background: #111; z-index: 10000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column; 
+    }
+    @media (min-width: 769px) {
+      .sidebar { top: 0; right: -300px; width: 300px; height: 100%; border-left: 2px solid #FFAA00; padding: 100px 40px; }
+      .sidebar.active { right: 0; }
+    }
+    @media (max-width: 768px) {
+      .sidebar { 
+        bottom: -100%; left: 0; width: 100%; height: auto; 
+        border-top: 3px solid #FFAA00; border-radius: 25px 25px 0 0;
+        padding: 30px 25px 100px 25px; 
+      }
+      .sidebar.active { bottom: 0; }
+      .sidebar a { font-size: 1.1rem !important; margin-bottom: 12px !important; text-align: center; border-bottom: 1px solid #222; padding-bottom: 8px; }
+    }
+    .sidebar a { color: #fff; font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; transition: 0.3s; }
+
+    .overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); z-index: 9999; display: none;
+      backdrop-filter: blur(4px);
+    }
+    .overlay.active { display: block; }
+
+    @media (max-width: 768px) {
+      body { padding-bottom: 80px; }
+      .mobile-nav {
+        display: flex; position: fixed; bottom: 0; left: 0; width: 100%;
+        background: rgba(10, 10, 10, 0.98); backdrop-filter: blur(15px);
+        justify-content: space-evenly; align-items: center; padding: 12px 0; 
+        border-top: 1px solid #333; z-index: 10001;
+      }
+      .mobile-nav a, .mobile-menu-trigger { 
+        color: #888; font-size: 0.65rem; font-weight: bold; text-align: center; 
+        display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;
+      }
+    }
+    @media (min-width: 769px) { .mobile-nav { display: none; } }
+
+    #smpIpBtn {
+      position:fixed; bottom:85px; left:20px;
+      background:#FFAA00; color:#000; padding:10px 18px;
+      border-radius:9999px; cursor:pointer; font-weight:bold; z-index:90; font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="flex items-center gap-4"><img src="kalarium_logo_flat.png" alt="Logo" style="height: 35px;"></div>
+    <div class="flex items-center gap-6">
+      <div class="nav-links">
+        <a href="/" class="text-sm font-bold hover:text-[#FFAA00]">ANA SAYFA</a>
+        <a href="/katalog" class="text-sm font-bold hover:text-[#FFAA00]">KATALOG</a>
+      </div>
+      <div class="menu-btn-desktop" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <div class="sidebar" id="sidebar">
+    <div class="md:hidden w-12 h-1.5 bg-gray-700 rounded-full mx-auto mb-6"></div>
+    <a href="/">Ana Sayfa</a>
+    <a href="/launcher">Launcher</a>
+    <a href="/katalog">Katalog</a>
+    <a href="/medya">Medya</a>
+    <a href="https://jubbio.com/invite/ATSAQrgU">Jubbio Topluluğu</a>
+    <a href="mailto:iletisim@kalarium.com" style="color: #55FF55;">İletişim</a>
+  </div>
+
+  <div class="mobile-nav">
+    <a href="/"><span>ANA SAYFA</span></a>
+    <a href="/katalog"><span>KATALOG</span></a>
+    <div class="mobile-menu-trigger" onclick="toggleMenu()">
+      <div class="flex flex-col gap-1 items-center bg-[#FFAA00]/10 p-2 rounded-xl">
+        <div class="w-5 h-0.5 bg-[#FFAA00]"></div>
+        <div class="w-5 h-0.5 bg-[#FFAA00]"></div>
+        <div class="w-5 h-0.5 bg-[#FFAA00]"></div>
+      </div>
+      <span class="text-[#FFAA00]">MENÜ</span>
+    </div>
+    <a href="/medya"><span>MEDYA</span></a>
+    <a href="https://jubbio.com/invite/ATSAQrgU"><span>JUBBIO</span></a>
+  </div>
+
+  <main class="flex justify-center items-center px-6 min-h-[70vh]">
+    <div class="bg-[#151515] p-8 md:p-12 border border-[#222] rounded-3xl max-w-2xl w-full shadow-2xl shadow-black" data-aos="zoom-in">
+      <h1 class="text-3xl md:text-5xl font-black text-[#FFAA00] mb-4 text-center">KALARIUM LAUNCHER</h1>
+      <p class="text-gray-400 text-center mb-8">Windows için optimize edilmiş özel launcher ile maceraya hemen başla.</p>
+
+      <div class="flex justify-center mb-10">
+        <a href="https://github.com/hasankaara/kalarium/releases/download/kalarium_launcher_beta/kalarium.launcher.zip" 
+           class="bg-[#FFAA00] text-black px-10 py-4 rounded-2xl font-black text-xl hover:scale-105 transition-transform flex items-center gap-3">
+           💾 İNDİR (.ZIP)
+        </a>
+      </div>
+
+      <div class="bg-black/40 p-6 rounded-2xl border border-[#333]">
+        <h2 class="text-[#55FF55] font-bold text-lg mb-4 flex items-center gap-2">
+          <span>⚙️</span> KURULUM ADIMLARI
+        </h2>
+        <ul class="space-y-4 text-gray-300 text-sm md:text-base">
+          <li class="flex gap-3"><span class="text-[#FFAA00] font-bold">1.</span> İndirilen dosyayı masaüstüne çıkartın.</li>
+          <li class="flex gap-3"><span class="text-[#FFAA00] font-bold">2.</span> Klasörün içindeki <code class="bg-[#222] px-1 rounded text-white">Kalarium Launcher.exe</code> dosyasını kopyalayın.</li>
+          <li class="flex gap-3"><span class="text-[#FFAA00] font-bold">3.</span> Masaüstüne sağ tıklayıp "Kısayol Yapıştır" deyin.</li>
+          <li class="flex gap-3"><span class="text-[#FFAA00] font-bold">4.</span> Çift tıklayarak sunucuya giriş yapın!</li>
+        </ul>
+      </div>
+
+      <div class="mt-8 pt-6 border-top border-[#222] text-center">
+        <span class="text-xs text-gray-600 bg-gray-900 px-4 py-1 rounded-full border border-gray-800">Sürüm: 1.4 • Sadece Windows</span>
+      </div>
+    </div>
+  </main>
+
+  <div id="smpIpBtn" onclick="copyIp()">
+    <span id="smpText">IP: esmp.aternos.me</span>
+  </div>
+
+  <script>
+    AOS.init({ once: true, duration: 800 });
+    const smpIp = "esmp.aternos.me";
+
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+      document.getElementById('overlay').classList.toggle('active');
+    }
+
+    function copyIp() {
+      navigator.clipboard.writeText(smpIp);
+      const txt = document.getElementById('smpText');
+      txt.innerText = "Kopyalandı!";
+      setTimeout(() => { txt.innerText = "IP: " + smpIp; }, 2000);
+    }
+  </script>
+</body>
+</html>

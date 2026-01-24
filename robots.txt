@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /fps-launcher/
+
+Sitemap: https://kalarium.vercel.app/sitemap.xml
