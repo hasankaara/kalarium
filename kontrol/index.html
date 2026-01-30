@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta name="google-site-verification" content="XmmZx_io46TWXv0FpGpwLamPj-etyspJYKVQsaGkZV4" />
-  <link rel="icon" type="image/png" href="/kalarium_logo_flat.png" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalarium SMP | Ana Sayfa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalarium SMP | Hile Kontrol</title>
+  <link rel="icon" type="image/png" href="/kalarium_logo_flat.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif;}
-    body { overflow-x:hidden; background:#0f0f0f; color:#fff; }
+    body { overflow-x:hidden; background:#0f0f0f; color:#fff; padding-top: 100px; }
 
     header {
       display:flex; align-items:center; justify-content:space-between;
@@ -33,12 +32,10 @@
       position: fixed; background: #111; z-index: 10000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex; flex-direction: column; 
     }
-
     @media (min-width: 769px) {
       .sidebar { top: 0; right: -300px; width: 300px; height: 100%; border-left: 2px solid #FFAA00; padding: 100px 40px; }
       .sidebar.active { right: 0; }
     }
-
     @media (max-width: 768px) {
       .sidebar { 
         bottom: -100%; left: 0; width: 100%; height: auto; 
@@ -48,7 +45,6 @@
       .sidebar.active { bottom: 0; }
       .sidebar a { font-size: 1.1rem !important; margin-bottom: 12px !important; text-align: center; border-bottom: 1px solid #222; padding-bottom: 8px; }
     }
-
     .sidebar a { color: #fff; font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; transition: 0.3s; }
 
     .overlay {
@@ -59,7 +55,7 @@
     .overlay.active { display: block; }
 
     @media (max-width: 768px) {
-      body { padding-bottom: 70px; }
+      body { padding-bottom: 80px; }
       .mobile-nav {
         display: flex; position: fixed; bottom: 0; left: 0; width: 100%;
         background: rgba(10, 10, 10, 0.98); backdrop-filter: blur(15px);
@@ -68,21 +64,10 @@
       }
       .mobile-nav a, .mobile-menu-trigger { 
         color: #888; font-size: 0.65rem; font-weight: bold; text-align: center; 
-        display: flex; flex-direction: column; align-items: center; gap: 4px;
-        flex: 1;
+        display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;
       }
-      .mobile-nav a.active { color: #FFAA00; }
     }
     @media (min-width: 769px) { .mobile-nav { display: none; } }
-
-    .hero {
-      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('kalarium_loading_screen.png');
-      background-size: cover; background-position: center; height: 100vh;
-      display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-    }
-
-    .hero-btn { width: 100%; max-width: 250px; padding: 12px; font-size: 1rem; }
-    @media (min-width: 768px) { .hero-btn { width: auto; max-width: none; padding: 16px 40px; font-size: 1.25rem; } }
 
     #smpIpBtn {
       position:fixed; bottom:85px; left:20px;
@@ -91,13 +76,13 @@
     }
   </style>
 </head>
-<body>
+<body data-aos-easing="ease" data-aos-duration="800" data-aos-delay="0">
 
   <header>
-    <div class="flex items-center gap-4"><img src="kalarium_logo_flat.png" alt="Logo" style="height: 35px;"></div>
+    <div class="flex items-center gap-4"><img src="/kalarium_logo_flat.png" alt="Logo" style="height: 35px;"></div>
     <div class="flex items-center gap-6">
       <div class="nav-links">
-        <a href="/launcher" class="text-sm font-bold hover:text-[#FFAA00]">LAUNCHER</a>
+        <a href="/" class="text-sm font-bold hover:text-[#FFAA00]">ANA SAYFA</a>
         <a href="/katalog" class="text-sm font-bold hover:text-[#FFAA00]">KATALOG</a>
         <a href="/kontrol" class="text-sm font-bold text-[#55FF55] hover:text-[#FFAA00]">HİLE KONTROL</a>
       </div>
@@ -113,15 +98,15 @@
     <div class="md:hidden w-12 h-1.5 bg-gray-700 rounded-full mx-auto mb-6"></div>
     <a href="/">Ana Sayfa</a>
     <a href="/launcher">Launcher</a>
-    <a href="/kontrol" style="color: #55FF55;">Hile Kontrol</a>
+    <a href="/kontrol" style="color: #55FF55;">Hile Kontrol 🛡️</a>
     <a href="/katalog">Katalog</a>
     <a href="/medya">Medya</a>
     <a href="https://jubbio.com/invite/ATSAQrgU">Jubbio Topluluğu</a>
-    <a href="mailto:iletisim@kalarium.com" style="color: #55FF55;">İletişim</a>
+    <a href="mailto:iletisim@kalarium.com">İletişim</a>
   </div>
 
   <div class="mobile-nav">
-    <a href="/" class="active"><span>ANA SAYFA</span></a>
+    <a href="/"><span>ANA SAYFA</span></a>
     <a href="/katalog"><span>KATALOG</span></a>
     <div class="mobile-menu-trigger" onclick="toggleMenu()">
       <div class="flex flex-col gap-1 items-center bg-[#FFAA00]/10 p-2 rounded-xl">
@@ -132,64 +117,57 @@
       <span class="text-[#FFAA00]">MENÜ</span>
     </div>
     <a href="/medya"><span>MEDYA</span></a>
-    <a href="https://jubbio.com/invite/ATSAQrgU"><span>JUBBIO</span></a>
+    <a href="/kontrol"><span class="text-[#55FF55]">KONTROL</span></a>
   </div>
 
-  <section class="hero">
-    <div data-aos="zoom-in" class="px-6 w-full flex flex-col items-center">
-      <h1 class="text-4xl md:text-7xl font-black text-[#FFAA00] mb-4">KALARIUM SMP</h1>
-      <p class="text-gray-300 text-base md:text-2xl mb-8 max-w-2xl mx-auto px-4">Efe SMP ve Survival SMP dünyasına şimdi adım at!</p>
-      <div class="flex flex-col md:flex-row gap-4 justify-center items-center w-full px-8">
-        <button id="mainPlayBtn" class="hero-btn bg-[#FFAA00] text-black rounded-full font-black hover:scale-105 transition-transform shadow-lg">ŞİMDİ OYNA</button>
-        <a href="/katalog" class="hero-btn bg-transparent border-2 border-white text-white rounded-full font-black hover:bg-white hover:text-black transition-all text-center">KATALOG</a>
-      </div>
-    </div>
-  </section>
+  <main class="flex justify-center items-center px-6 min-h-[70vh]">
+    <div class="bg-[#151515] p-8 md:p-12 border border-[#222] rounded-3xl max-w-2xl w-full shadow-2xl shadow-black" data-aos="zoom-in">
+      <h1 class="text-3xl md:text-5xl font-black text-[#FFAA00] mb-4 text-center uppercase">Hile Kontrol Sistemi</h1>
+      <p class="text-gray-400 text-center mb-8">Adil bir oyun deneyimi için Kalarium Güvenlik Yazılımını indirin ve tarama işlemini başlatın.</p>
 
-  <section class="py-20 px-6">
-    <h2 class="text-center text-3xl md:text-5xl font-bold mb-16 text-[#55FF55]" data-aos="fade-up">Sunucu Özellikleri</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-        <h3 style="color: #FFAA00;" class="text-xl font-bold mb-4">🌍 Klasik Survival</h3>
-        <p class="text-gray-400">Efe SMP ve Survival SMP'de özlediğin o saf ve doğal survival deneyimi seni bekliyor.</p>
+      <div class="flex justify-center mb-10">
+        <a href="https://github.com/hasankaara/kalarium/releases/download/kalarium_hile_kontrol/kalarium.hile.kontrol.exe" class="bg-[#FFAA00] text-black px-10 py-4 rounded-2xl font-black text-xl hover:scale-105 transition-transform flex items-center gap-3">
+            🛡️ KONTROLÜ İNDİR (.EXE)
+        </a>
       </div>
-      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-        <h3 style="color: #55FF55;" class="text-xl font-bold mb-4">🛡️ Kalarium Claim</h3>
-        <p class="text-gray-400">Sadece Kalarium sunucumuza özel geliştirilmiş claim sistemi ile yapılarını güvene al.</p>
+
+      <div class="bg-black/40 p-6 rounded-2xl border border-[#333]">
+        <h2 class="text-[#55FF55] font-bold text-lg mb-4 flex items-center gap-2">
+          <span>🔍</span> NASIL KULLANILIR?
+        </h2>
+        <ul class="space-y-4 text-gray-300 text-sm md:text-base">
+          <li class="flex gap-3"><span class="text-[#FFAA00] font-bold">1.</span> <code class="bg-[#222] px-1 rounded">kalarium.hile.kontrol.exe</code> dosyasını indirin ve açın.</li>
+          <li class="flex gap-3"><span class="text-[#FFAA00] font-bold">2.</span> Oyununuz açıkken uygulamadaki talimatları izleyin.</li>
+          <li class="flex gap-3"><span class="text-[#FFAA00] font-bold">3.</span> İşlem bittiğinde çıkan doğrulama kodunu yetkiliye iletin.</li>
+          <li class="flex gap-3 text-xs text-gray-500 italic">* Not: Antivirüs programınız uyarı verirse lütfen istisna ekleyin; yazılım sadece oyun dosyalarını tarar.</li>
+        </ul>
       </div>
-      <div class="bg-[#151515] p-10 border border-[#222] rounded-2xl" data-aos="fade-up" data-aos-delay="300">
-        <h3 style="color: #55FFFF;" class="text-xl font-bold mb-4">💎 Adaletli Oyun</h3>
-        <p class="text-gray-400">Tüm sunucularımızda hilesiz, küfürsüz ve saygılı bir topluluk ortamı sağlıyoruz.</p>
+
+      <div class="mt-8 pt-6 border-t border-[#222] text-center">
+        <span class="text-xs text-gray-600 bg-gray-900 px-4 py-1 rounded-full border border-gray-800">Güvenlik Sürümü: v1.0.2 • Kalarium Shield</span>
       </div>
     </div>
-  </section>
+  </main>
 
   <div id="smpIpBtn" onclick="copyIp()">
     <span id="smpText">IP: esmp.aternos.me</span>
   </div>
 
   <script>
-    AOS.init({ once: true, duration: 1000 });
+    AOS.init({ once: true, duration: 800 });
     const smpIp = "esmp.aternos.me";
+
     function toggleMenu() {
       document.getElementById('sidebar').classList.toggle('active');
       document.getElementById('overlay').classList.toggle('active');
     }
+
     function copyIp() {
       navigator.clipboard.writeText(smpIp);
       const txt = document.getElementById('smpText');
       txt.innerText = "Kopyalandı!";
       setTimeout(() => { txt.innerText = "IP: " + smpIp; }, 2000);
     }
-    document.getElementById('mainPlayBtn').addEventListener('click', async function() {
-      const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-      if (isMobile) {
-        try { await navigator.clipboard.writeText(smpIp); } catch (e) {}
-        window.location.href = "minecraft://";
-      } else {
-        window.location.href = "/launcher";
-      }
-    });
   </script>
 </body>
 </html>
